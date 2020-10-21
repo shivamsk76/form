@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
 
 function Form() {
     const [name, setName] = useState('');
@@ -6,9 +8,28 @@ function Form() {
     const [fathername, setFathername] = useState('');
     const [mothername, setMothername] = useState('');
     const [mobile, setMobile] = useState('')
+    const backendAddress = process.env.BACKENDADDRESS
 
     const submitHandle = (e) => {
         e.preventDefault();
+        
+     const Data = {
+         "Firstname":name,
+         "Lastname":lastname,
+         "Fathername":fathername,
+         "Mothername":mothername,
+         "Mobile":mobile
+
+     }
+
+   
+     axios.post(backendAddress, Data).then(Response => {
+        console.log(Response);
+        
+    }).catch(err => {
+        console.log(err);
+    })
+
 
         
     }
