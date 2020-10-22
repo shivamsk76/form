@@ -10,28 +10,32 @@ function Form() {
     const [mobile, setMobile] = useState('')
     const backendAddress = process.env.BACKENDADDRESS
 
+    var config = {
+        headers:{'Content-Type':'application/json'}
+    }
+
     const submitHandle = (e) => {
         e.preventDefault();
-        
-     const Data = {
-         "Firstname":name,
-         "Lastname":lastname,
-         "Fathername":fathername,
-         "Mothername":mothername,
-         "Mobile":mobile
 
-     }
+        const Data = {
+            "Firstname": name,
+            "Lastname": lastname,
+            "Fathername": fathername,
+            "Mothername": mothername,
+            "Mobile": mobile
 
-   
-     axios.post(backendAddress, Data).then(Response => {
-        console.log(Response);
-        
-    }).catch(err => {
-        console.log(err);
-    })
+        }
 
 
-        
+        axios.post(backendAddress, Data,config).then(Response => {
+            console.log(Response);
+
+        }).catch(err => {
+            console.log(err);
+        })
+
+
+
     }
 
 
@@ -39,15 +43,15 @@ function Form() {
     return (
         <div>
             <form onSubmit={submitHandle}>
-                Name:<input type='text' placeholder="Enter your name" onChange={(e) => setName(e.target.value)} /> <br/><br/>
-                LastName:<input type='text' placeholder="Enter your Lastname" onChange={(e) => setLastname(e.target.value)} /><br/><br/>
-                Father Name:<input type='text' placeholder="Enter your Father's name" onChange={(e) => setFathername(e.target.value)} /><br/><br/>
-                Mother Name:<input type='text' placeholder="Enter your mother's name" onChange={(e) => setMothername(e.target.value)} /><br/><br/>
-                Mobile No:<input type='text' placeholder="Enter your mobile number" onChange={(e) => setMobile(e.target.value)} /><br/><br/>
+                Name:<input type='text' placeholder="Enter your name" onChange={(e) => setName(e.target.value)} /> <br /><br />
+                LastName:<input type='text' placeholder="Enter your Lastname" onChange={(e) => setLastname(e.target.value)} /><br /><br />
+                Father Name:<input type='text' placeholder="Enter your Father's name" onChange={(e) => setFathername(e.target.value)} /><br /><br />
+                Mother Name:<input type='text' placeholder="Enter your mother's name" onChange={(e) => setMothername(e.target.value)} /><br /><br />
+                Mobile No:<input type='text' placeholder="Enter your mobile number" onChange={(e) => setMobile(e.target.value)} /><br /><br />
                 <input type='submit' title='submit' />
             </form>
         </div>
     )
 }
 
-export default Form ;
+export default Form;
