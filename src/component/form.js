@@ -27,7 +27,9 @@ function Form() {
         }
 
 
-        axios.post(backendAddress, Data,config).then(Response => {
+        axios.post(
+           ' http://backendproject-env.eba-dme9cqcx.us-east-2.elasticbeanstalk.com/registration'
+            , Data).then(Response => {
             console.log(Response);
 
         }).catch(err => {
