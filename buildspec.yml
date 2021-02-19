@@ -9,6 +9,7 @@ phases:
             - apt-get update
             - node -v
             - apt-get install npm -y
+            - npm i
             - ls
     build:
         commands:
