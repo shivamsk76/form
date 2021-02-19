@@ -18,6 +18,6 @@ phases:
 artifacts:
     files:
         - '**/appspec.yml'
-    base-directory: 'build'
+    base-directory: build
             files:
                 - '**/*'
