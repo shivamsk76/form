@@ -15,8 +15,6 @@ phases:
         commands:
             - npm run build
             - ls
-            - echo $CODEBUILD_SRC_DIR
 artifacts:
     files:
-        - '**/appspec.yml'
-        - build
+        - '**/build'
