@@ -16,9 +16,10 @@ phases:
             - npm run build
             - ls
             - cp appspec.yml /build
-            - cd ./build && ls
             - ls
             - mkdir build1
+            - mv appspec.yml /build1
+            - cd ./build1 && ls
 artifacts:
     files:
         - "**/*"
