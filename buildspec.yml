@@ -19,7 +19,7 @@ phases:
     post_build:
         commands:
             - ls
-            - mv appspec.yml /build
+            - mv -v appspec.yml /build
 artifacts:
     files:
         - "**/*"
