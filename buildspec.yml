@@ -25,3 +25,8 @@ artifacts:
         - "**/*"
     base-directory: 'build'
     discard-paths: no
+    secondary-artifacts:
+        artifact1:
+      files:
+        - appspec.yml
+      name: secondary-artifact-name-1
