@@ -16,7 +16,7 @@ phases:
         commands:
             - npm run build
             - ls
-            - mv build/* /hello
+            - mv build/* hello
             - cd ./hello && ls
             - cd ..
     post_build:
