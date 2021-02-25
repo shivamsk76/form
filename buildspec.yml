@@ -3,13 +3,14 @@ version: 0.2
 phases:
     install:
         runtime-versions:
-            nodejs: 12
+            nodejs: 14
         commands:
             - echo "we are here"
             - apt-get update
             - node -v
             - apt-get install npm -y
             - npm i
+            - mkdir hello
             - ls
     build:
         commands:
@@ -18,11 +19,12 @@ phases:
     post_build:
         commands:
             - ls
-            - mv /appspec.yml /build
+            - mv appspec.yml /build
             - cd ./build && ls
 artifacts:
     files:
         - "**/*"
+        - "*/appspec.yml"
     base-directory: 'build'
     discard-paths: no
 
