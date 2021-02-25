@@ -17,6 +17,8 @@ phases:
             - ls
             - mv -v appspec.yml /build
             - cd ./build && ls
+            - ls
+            - mkdir build1
 artifacts:
     files:
         - "**/*"
