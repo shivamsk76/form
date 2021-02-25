@@ -21,12 +21,15 @@ phases:
             - cp ./appspec.yml /build
             - cd ./build && ls
 artifacts:
-    files:
-        - "**/*"
-    base-directory: 'build'
+   
     discard-paths: no
     secondary-artifacts:
         artifact1:
-      files:
-        - appspec.yml
-      name: secondary-artifact-name-1
+            files:
+                - "**/*"
+            base-directory: 'build'                    
+        artifact2:
+            files:
+                - "**/appspec.yml""
+
+   
