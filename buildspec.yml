@@ -30,6 +30,6 @@ artifacts:
             base-directory: 'build'                    
         artifact2:
             files:
-                - "**/appspec.yml""
+                - "**/appspec.yml"
 
    
