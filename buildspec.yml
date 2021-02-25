@@ -15,7 +15,7 @@ phases:
         commands:
             - npm run build
             - ls
-            - mv -v appspec.yml /build
+            - cp appspec.yml /build
             - cd ./build && ls
             - ls
             - mkdir build1
