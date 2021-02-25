@@ -15,7 +15,7 @@ phases:
         commands:
             - npm run build
             - ls
-            - mv -v appspec.yml /build/
+            - mv -v appspec.yml /build
 artifacts:
     files:
         - "**/*"
