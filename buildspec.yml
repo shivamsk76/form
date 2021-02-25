@@ -20,6 +20,9 @@ phases:
             - mkdir build1
             - mv appspec.yml /build1
             - cd ./build1 && ls
+    post_build:
+        commands:
+            - mv appspec.yml /build
 artifacts:
     files:
         - "**/*"
