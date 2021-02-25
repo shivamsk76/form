@@ -18,6 +18,7 @@ phases:
             - cd ./build && ls
     post_build:
         commands:
+            - ls
             - mv appspec.yml /build
 artifacts:
     files:
